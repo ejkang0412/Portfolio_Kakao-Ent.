@@ -1,3 +1,4 @@
+
 /* ====== Base ====== */
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -111,21 +112,35 @@ button { font: inherit; }
 /* ====== Hero ====== */
 .hero{
   position: relative;
-  padding: 84px 0 60px;
+  padding: 56px 0 44px;  /* 84/60 -> 축소 */
   overflow: hidden;
+
+  /* 100%에서 과하게 길어지는 느낌 방지 */
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
 }
+
 .hero__inner{ position: relative; z-index: 1; }
+
 .hero__bg{
   position: absolute;
-  inset: -200px -200px auto -200px;
-  height: 520px;
+
+  /* inset:-200px 로 과하게 퍼지던 배경 범위 줄이기 */
+  left: -120px;
+  right: -120px;
+  top: -140px;
+
+  /* 520px -> 420px : 아래로 번지는 느낌 감소 */
+  height: 420px;
+
   background:
-    radial-gradient(circle at 20% 30%, rgba(255,215,0,.18), transparent 48%),
-    radial-gradient(circle at 70% 40%, rgba(78,205,196,.10), transparent 55%),
-    radial-gradient(circle at 50% 90%, rgba(255,255,255,.06), transparent 60%);
-  filter: blur(0px);
+    radial-gradient(circle at 20% 30%, rgba(255,215,0,.16), transparent 52%),
+    radial-gradient(circle at 70% 40%, rgba(78,205,196,.10), transparent 60%),
+    radial-gradient(circle at 50% 90%, rgba(255,255,255,.05), transparent 62%);
   pointer-events: none;
 }
+
 .eyebrow{
   display:inline-block;
   padding: 6px 10px;
@@ -138,60 +153,34 @@ button { font: inherit; }
   text-transform: uppercase;
   margin: 0 0 14px;
 }
+
 .hero__title{
   margin: 0 0 16px;
-  font-size: clamp(28px, 3.6vw, 48px);
-  line-height: 1.18;
+
+  /* 100%에서 줄바꿈이 많아져서 커 보이는 현상 완화 */
+  font-size: clamp(26px, 3.1vw, 44px); /* 28/3.6/48 -> 26/3.1/44 */
+  line-height: 1.16;
   letter-spacing: -0.03em;
 }
+
 .accent{ color: var(--accent); }
 .nowrap{ white-space: nowrap; }
 
 .hero__desc{
-  margin: 0 0 24px;
+  margin: 0 0 22px; /* 24 -> 22 */
   color: var(--muted);
   font-size: 16px;
   max-width: 720px;
 }
 .hero__cta{ display:flex; gap: 12px; flex-wrap: wrap; }
 
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 14px;
-  font-weight: 800;
-  border: 1px solid rgba(255,255,255,.12);
-  cursor: pointer;
-}
-.btn--primary{
-  background: var(--accent);
-  color: #121212;
-  border-color: rgba(255,215,0,.55);
-}
-.btn--primary:hover{ filter: brightness(1.03); }
-.btn--ghost{
-  background: rgba(255,255,255,.04);
-  color: var(--text);
-}
-.btn--ghost:hover{ background: rgba(255,255,255,.08); }
-
 .hero__meta{
-  margin-top: 18px;
+  margin-top: 14px; /* 18 -> 14 */
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-.meta__chip{
-  font-size: 13px;
-  color: var(--muted);
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
-}
+
 
 /* ====== About ====== */
 .about__card{
