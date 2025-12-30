@@ -528,4 +528,49 @@ button { font: inherit; }
     padding: 64px 0;
   }
 }
+/* ================================
+   FIX: FHD(1920x1080) 100% 기준
+   - 첫 화면에 About 안 보이게
+   - 그라데이션 끊김 제거
+================================ */
+
+/* Hero를 상단바 제외한 화면 높이만큼 채움 */
+.hero{
+  position: relative;
+  overflow: hidden;
+
+  min-height: calc(100vh - var(--topbar-h));
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+}
+
+/* 기존 hero padding은 inner로 이동 */
+.hero__inner{
+  position: relative;
+  z-index: 1;
+  padding: 56px 0 44px;
+}
+
+/* 그라데이션이 hero 전체를 덮도록 변경(끊김 해결) */
+.hero__bg{
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 18% 20%, rgba(255,215,0,.18), transparent 55%),
+    radial-gradient(circle at 75% 25%, rgba(78,205,196,.10), transparent 62%),
+    radial-gradient(circle at 50% 60%, rgba(255,255,255,.06), transparent 68%),
+    linear-gradient(to bottom, rgba(18,18,18,0) 0%, rgba(18,18,18,1) 92%);
+}
+
+/* FHD에서 제목만 안정적으로(줄바꿈/크기) */
+@media (min-width: 1200px){
+  .hero__title{
+    font-size: 42px;
+    line-height: 1.15;
+    max-width: 880px;
+  }
 
