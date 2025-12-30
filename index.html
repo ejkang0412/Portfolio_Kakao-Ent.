@@ -39,263 +39,269 @@
     </div>
   </header>
 
-  <!-- Hero (표지 느낌) -->
-  <section class="hero">
-    <div class="container hero__inner">
-      <p class="eyebrow">Portfolio</p>
-      <h1 class="hero__title">
-        사랑하는 일을 찾는 과정은<br />
-        <span class="accent">사람을 이해하는 일</span>에서 시작된다고 믿는, <span class="nowrap">강은정</span>입니다.
-      </h1>
-      <p class="hero__desc">
-        사람을 이해하는 시선으로 기획하고, 운영하며, 문제를 해결해온 과정입니다.
-      </p>
+  <!-- ✅ 여기부터: 챕터 스크롤 컨테이너 -->
+  <main class="snap" id="snap">
 
-      <div class="hero__cta">
-        <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
-        <a class="btn btn--ghost" href="#about">소개 보기</a>
+    <!-- Hero (표지 느낌) -->
+    <section class="hero chapter" id="home">
+      <div class="container hero__inner">
+        <p class="eyebrow">Portfolio</p>
+        <h1 class="hero__title">
+          사랑하는 일을 찾는 과정은<br />
+          <span class="accent">사람을 이해하는 일</span>에서 시작된다고 믿는, <span class="nowrap">강은정</span>입니다.
+        </h1>
+        <p class="hero__desc">
+          사람을 이해하는 시선으로 기획하고, 운영하며, 문제를 해결해온 과정입니다.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
+          <a class="btn btn--ghost" href="#about">소개 보기</a>
+        </div>
+
+        <div class="hero__meta">
+          <a class="meta__chip" href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a>
+          <span class="meta__chip">010-2191-3831</span>
+        </div>
       </div>
 
-      <div class="hero__meta">
-        <a class="meta__chip" href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a>
-        <span class="meta__chip">010-2191-3831</span>
+      <div class="hero__bg" aria-hidden="true"></div>
+    </section>
+
+    <!-- About -->
+    <section class="section chapter" id="about">
+      <div class="container">
+        <div class="section__head">
+          <h2>About Me</h2>
+          <p>채용 운영과 인재 소싱을 지원해온 카카오엔터 TA 지원자, 강은정입니다.</p>
+        </div>
+
+        <div class="about">
+          <div class="about__card">
+            <div class="about__left">
+              <div class="photo">
+                <img src="profile.jpg" alt="강은정 프로필 사진" />
+              </div>
+            </div>
+
+            <div class="about__right">
+              <div class="about__name">
+                <h3>강은정 <span class="sub">Kang Eunjeong</span></h3>
+                <div class="about__line"></div>
+              </div>
+
+              <ul class="about__info">
+                <li><span class="icon">☎</span>010-2191-3831</li>
+                <li><span class="icon">✉</span><a href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a></li>
+                <li><span class="icon">🎂</span>2003.10.09</li>
+              </ul>
+
+              <div class="grid2">
+                <div class="box">
+                  <h4>학력사항</h4>
+                  <ul class="bullets">
+                    <li>부영여자고등학교 졸업</li>
+                    <li>경기대학교 경영학과 / AI융합경영 복수전공 재학</li>
+                  </ul>
+                </div>
+
+                <div class="box">
+                  <h4>Key Projects</h4>
+                  <ul class="bullets">
+                    <li>전략적 다이렉트 소싱 참여</li>
+                    <li>자체 인텔리전스 플랫폼 데이터 고도화(ETM)</li>
+                    <li>친환경 창업 프로젝트 ‘Pill Good’</li>
+                  </ul>
+                </div>
+              </div>
+
+              <p class="about__desc">
+                채용 운영 지원을 통해 채용 프로세스, JD 분석 기반 후보자 탐색과 데이터 정리를 실무 관점에서 경험했습니다.
+                기준의 명확함과 운영의 안정성이 채용 결과의 신뢰로 이어진다고 생각하며, 지원자 경험의 작은 접점까지도 세심하게 관리하고자 합니다.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
 
-    <div class="hero__bg" aria-hidden="true"></div>
-  </section>
+    <!-- Skills -->
+    <section class="section section--muted chapter" id="skills">
+      <div class="container">
+        <div class="section__head">
+          <h2>Core Skills</h2>
+          <p>강점을 만드는 기술과 역량</p>
+        </div>
 
-  <!-- About -->
-  <section class="section" id="about">
-    <div class="container">
-      <div class="section__head">
-        <h2>About Me</h2>
-        <p>채용 운영과 인재 소싱을 지원해온 카카오엔터 TA 지원자, 강은정입니다.</p>
+        <div class="skills">
+          <div class="skillCard">
+            <h3>프로그램 사용능력</h3>
+
+            <div class="meter">
+              <div class="meter__row">
+                <span>Canva</span>
+                <div class="bar"><div class="bar__fill" style="width:95%"></div></div>
+                <span class="pct">95%</span>
+              </div>
+
+              <div class="meter__row">
+                <span>Notion</span>
+                <div class="bar"><div class="bar__fill" style="width:90%"></div></div>
+                <span class="pct">90%</span>
+              </div>
+
+              <div class="meter__row">
+                <span>Excel</span>
+                <div class="bar"><div class="bar__fill" style="width:70%"></div></div>
+                <span class="pct">70%</span>
+              </div>
+            </div>
+
+            <p class="hint">업무 목적에 맞는 도구를 선택해 활용하며, 효율적인 작업 환경을 만들어갑니다.</p>
+          </div>
+
+          <div class="skillCard">
+            <h3>실무 수행 역량</h3>
+
+            <div class="meter">
+              <div class="meter__row">
+                <span>커뮤니케이션</span>
+                <div class="bar"><div class="bar__fill" style="width:95%"></div></div>
+                <span class="pct">95%</span>
+              </div>
+
+              <div class="meter__row">
+                <span>문제해결능력</span>
+                <div class="bar"><div class="bar__fill" style="width:95%"></div></div>
+                <span class="pct">95%</span>
+              </div>
+
+              <div class="meter__row">
+                <span>프로젝트 기획·운영</span>
+                <div class="bar"><div class="bar__fill" style="width:98%"></div></div>
+                <span class="pct">98%</span>
+              </div>
+            </div>
+
+            <p class="hint">원활한 커뮤니케이션을 바탕으로 문제를 해결하고 프로젝트를 끝까지 운영합니다.</p>
+          </div>
+        </div>
       </div>
+    </section>
 
-      <div class="about">
-        <div class="about__card">
-          <div class="about__left">
-            <div class="photo">
-              <img src="profile.jpg" alt="강은정 프로필 사진" />
+    <!-- Key Projects (카드 + 클릭 상세) -->
+    <section class="section chapter" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <h2>Key Projects</h2>
+          <p>프로젝트 카드를 클릭하면 상세가 열립니다.</p>
+        </div>
+
+        <div class="projectGrid">
+          <button class="projectCard" data-project="p1">
+            <div class="projectCard__thumb">
+              <img src="./assets/project1.jpg" alt="프로젝트 01 썸네일" />
+              <span class="badge">#01</span>
+            </div>
+            <div class="projectCard__body">
+              <h3>전략적 다이렉트 소싱 참여</h3>
+              <p>신사업 ‘재무팀장급’ 포지션 다이렉트 소싱 지원 · 롱리스트 구성</p>
+              <span class="link">상세 보기 →</span>
+            </div>
+          </button>
+
+          <button class="projectCard" data-project="p2">
+            <div class="projectCard__thumb">
+              <img src="./assets/project2.jpg" alt="프로젝트 02 썸네일" />
+              <span class="badge">#02</span>
+            </div>
+            <div class="projectCard__body">
+              <h3>자체 인텔리전스 플랫폼 데이터 고도화</h3>
+              <p>외부 인재 정보를 내부 ETM DB로 전환 · 분류 기준 수립/정제</p>
+              <span class="link">상세 보기 →</span>
+            </div>
+          </button>
+
+          <button class="projectCard" data-project="p3">
+            <div class="projectCard__thumb">
+              <img src="./assets/project3.jpg" alt="프로젝트 03 썸네일" />
+              <span class="badge">#03</span>
+            </div>
+            <div class="projectCard__body">
+              <h3>친환경 창업 프로젝트 ‘Pill Good’</h3>
+              <p>문제 인식–자원 확보–제작–검증–개선까지 연결된 실행형 프로젝트</p>
+              <span class="link">상세 보기 →</span>
+            </div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vision -->
+    <section class="section section--muted chapter" id="vision">
+      <div class="container">
+        <div class="section__head">
+          <h2>Vision & Goals</h2>
+          <p>플랫폼의 맥락을 읽는 Analytical Partner</p>
+        </div>
+
+        <div class="vision">
+          <div class="vision__card">
+            <h3>Three Colors, One Ecosystem</h3>
+            <p>
+              스마일게이트에서 게임 프로젝트와 인재 정보를 DB화하며 쌓은 직무적 통찰을 바탕으로,
+              기술 스택을 정확히 분류하고 소싱 감각으로 최적의 인재를 발굴하겠습니다.
+            </p>
+          </div>
+
+          <div class="vision__grid">
+            <div class="pill">
+              <h4>원천 IP의 힘을 잇는</h4>
+              <p>Global Connector</p>
+            </div>
+            <div class="pill">
+              <h4>확장과 변주를 돕는</h4>
+              <p>Creative Supporter</p>
             </div>
           </div>
 
-          <div class="about__right">
-            <div class="about__name">
-              <h3>강은정 <span class="sub">Kang Eunjeong</span></h3>
-              <div class="about__line"></div>
-            </div>
-
-            <ul class="about__info">
-              <li><span class="icon">☎</span>010-2191-3831</li>
-              <li><span class="icon">✉</span><a href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a></li>
-              <li><span class="icon">🎂</span>2003.10.09</li>
-            </ul>
-
-            <div class="grid2">
-              <div class="box">
-                <h4>학력사항</h4>
-                <ul class="bullets">
-                  <li>부영여자고등학교 졸업</li>
-                  <li>경기대학교 경영학과 / AI융합경영 복수전공 재학</li>
-                </ul>
-              </div>
-
-              <div class="box">
-                <h4>Key Projects</h4>
-                <ul class="bullets">
-                  <li>전략적 다이렉트 소싱 참여</li>
-                  <li>자체 인텔리전스 플랫폼 데이터 고도화(ETM)</li>
-                  <li>친환경 창업 프로젝트 ‘Pill Good’</li>
-                </ul>
-              </div>
-            </div>
-
-            <p class="about__desc">
-              채용 운영 지원을 통해 채용 프로세스, JD 분석 기반 후보자 탐색과 데이터 정리를 실무 관점에서 경험했습니다.
-              기준의 명확함과 운영의 안정성이 채용 결과의 신뢰로 이어진다고 생각하며, 지원자 경험의 작은 접점까지도 세심하게 관리하고자 합니다.
+          <div class="quote">
+            <p>
+              후보자가 ‘사랑하는 일’을 만나는 첫 관문 또한 하나의 설레는 브랜드 경험이 되어야 한다고 믿습니다.
+              영입 브랜딩을 ‘덕질하고 싶은 매력적인 여정’으로 만들어가겠습니다.
             </p>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Skills -->
-  <section class="section section--muted" id="skills">
-    <div class="container">
-      <div class="section__head">
-        <h2>Core Skills</h2>
-        <p>강점을 만드는 기술과 역량</p>
-      </div>
-
-      <div class="skills">
-        <div class="skillCard">
-          <h3>프로그램 사용능력</h3>
-
-          <div class="meter">
-            <div class="meter__row">
-              <span>Canva</span>
-              <div class="bar"><div class="bar__fill" style="width:95%"></div></div>
-              <span class="pct">95%</span>
-            </div>
-
-            <div class="meter__row">
-              <span>Notion</span>
-              <div class="bar"><div class="bar__fill" style="width:90%"></div></div>
-              <span class="pct">90%</span>
-            </div>
-
-            <div class="meter__row">
-              <span>Excel</span>
-              <div class="bar"><div class="bar__fill" style="width:70%"></div></div>
-              <span class="pct">70%</span>
-            </div>
-          </div>
-
-          <p class="hint">업무 목적에 맞는 도구를 선택해 활용하며, 효율적인 작업 환경을 만들어갑니다.</p>
+    <!-- Contact / Closing -->
+    <footer class="footer chapter" id="contact">
+      <div class="container footer__inner">
+        <div>
+          <h2 class="footer__title">Connect</h2>
+          <p class="footer__desc">사람을 깊이 이해하는 힘으로, Contents의 내일을 Connect할 강은정입니다.</p>
         </div>
 
-        <div class="skillCard">
-          <h3>실무 수행 역량</h3>
-
-          <div class="meter">
-            <div class="meter__row">
-              <span>커뮤니케이션</span>
-              <div class="bar"><div class="bar__fill" style="width:95%"></div></div>
-              <span class="pct">95%</span>
-            </div>
-
-            <div class="meter__row">
-              <span>문제해결능력</span>
-              <div class="bar"><div class="bar__fill" style="width:95%"></div></div>
-              <span class="pct">95%</span>
-            </div>
-
-            <div class="meter__row">
-              <span>프로젝트 기획·운영</span>
-              <div class="bar"><div class="bar__fill" style="width:98%"></div></div>
-              <span class="pct">98%</span>
-            </div>
-          </div>
-
-          <p class="hint">원활한 커뮤니케이션을 바탕으로 문제를 해결하고 프로젝트를 끝까지 운영합니다.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Key Projects (카드 + 클릭 상세) -->
-  <section class="section" id="projects">
-    <div class="container">
-      <div class="section__head">
-        <h2>Key Projects</h2>
-        <p>프로젝트 카드를 클릭하면 상세가 열립니다.</p>
-      </div>
-
-      <div class="projectGrid">
-        <button class="projectCard" data-project="p1">
-          <div class="projectCard__thumb">
-            <img src="./assets/project1.jpg" alt="프로젝트 01 썸네일" />
-            <span class="badge">#01</span>
-          </div>
-          <div class="projectCard__body">
-            <h3>전략적 다이렉트 소싱 참여</h3>
-            <p>신사업 ‘재무팀장급’ 포지션 다이렉트 소싱 지원 · 롱리스트 구성</p>
-            <span class="link">상세 보기 →</span>
-          </div>
-        </button>
-
-        <button class="projectCard" data-project="p2">
-          <div class="projectCard__thumb">
-            <img src="./assets/project2.jpg" alt="프로젝트 02 썸네일" />
-            <span class="badge">#02</span>
-          </div>
-          <div class="projectCard__body">
-            <h3>자체 인텔리전스 플랫폼 데이터 고도화</h3>
-            <p>외부 인재 정보를 내부 ETM DB로 전환 · 분류 기준 수립/정제</p>
-            <span class="link">상세 보기 →</span>
-          </div>
-        </button>
-
-        <button class="projectCard" data-project="p3">
-          <div class="projectCard__thumb">
-            <img src="./assets/project3.jpg" alt="프로젝트 03 썸네일" />
-            <span class="badge">#03</span>
-          </div>
-          <div class="projectCard__body">
-            <h3>친환경 창업 프로젝트 ‘Pill Good’</h3>
-            <p>문제 인식–자원 확보–제작–검증–개선까지 연결된 실행형 프로젝트</p>
-            <span class="link">상세 보기 →</span>
-          </div>
-        </button>
-      </div>
-    </div>
-  </section>
-
-  <!-- Vision -->
-  <section class="section section--muted" id="vision">
-    <div class="container">
-      <div class="section__head">
-        <h2>Vision & Goals</h2>
-        <p>플랫폼의 맥락을 읽는 Analytical Partner</p>
-      </div>
-
-      <div class="vision">
-        <div class="vision__card">
-          <h3>Three Colors, One Ecosystem</h3>
-          <p>
-            스마일게이트에서 게임 프로젝트와 인재 정보를 DB화하며 쌓은 직무적 통찰을 바탕으로,
-            기술 스택을 정확히 분류하고 소싱 감각으로 최적의 인재를 발굴하겠습니다.
-          </p>
+        <div class="footer__cta">
+          <a class="btn btn--primary" href="mailto:ejkang0412@naver.com">이메일 보내기</a>
+          <a class="btn btn--ghost" href="#top">맨 위로</a>
         </div>
 
-        <div class="vision__grid">
-          <div class="pill">
-            <h4>원천 IP의 힘을 잇는</h4>
-            <p>Global Connector</p>
-          </div>
-          <div class="pill">
-            <h4>확장과 변주를 돕는</h4>
-            <p>Creative Supporter</p>
-          </div>
-        </div>
-
-        <div class="quote">
-          <p>
-            후보자가 ‘사랑하는 일’을 만나는 첫 관문 또한 하나의 설레는 브랜드 경험이 되어야 한다고 믿습니다.
-            영입 브랜딩을 ‘덕질하고 싶은 매력적인 여정’으로 만들어가겠습니다.
-          </p>
+        <div class="footer__meta">
+          <span>© <span id="year"></span> Kang Eunjeong</span>
+          <span class="dot">•</span>
+          <a href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a>
+          <span class="dot">•</span>
+          <span>010-2191-3831</span>
         </div>
       </div>
-    </div>
-  </section>
+    </footer>
 
-  <!-- Contact / Closing -->
-  <footer class="footer" id="contact">
-    <div class="container footer__inner">
-      <div>
-        <h2 class="footer__title">Connect</h2>
-        <p class="footer__desc">사람을 깊이 이해하는 힘으로, Contents의 내일을 Connect할 강은정입니다.</p>
-      </div>
+  </main>
+  <!-- ✅ 여기까지: 챕터 스크롤 컨테이너 -->
 
-      <div class="footer__cta">
-        <a class="btn btn--primary" href="mailto:ejkang0412@naver.com">이메일 보내기</a>
-        <a class="btn btn--ghost" href="#top">맨 위로</a>
-      </div>
-
-      <div class="footer__meta">
-        <span>© <span id="year"></span> Kang Eunjeong</span>
-        <span class="dot">•</span>
-        <a href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a>
-        <span class="dot">•</span>
-        <span>010-2191-3831</span>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Project Modal -->
+  <!-- Project Modal (main 바깥에 두는 게 안전) -->
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal__backdrop" data-close="true"></div>
 
