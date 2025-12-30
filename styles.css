@@ -566,3 +566,7 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
     max-width: 900px;
   }
 }
+/* Custom Cursor */
+body{
+  cursor: url("후로도 버젼3.cur") 16 16, auto;
+}
