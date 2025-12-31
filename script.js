@@ -81,7 +81,7 @@ const PROJECTS = {
   p1: {
     title: "전략적 다이렉트 소싱 참여",
     summary:
-      "신사업 ‘재무팀장급’ 포지션 다이렉트 소싱 지원. JD 기반 롱리스트를 빠르게 구성해 초기 의사결정을 지원",
+      "신사업 ‘재무팀장급’ 포지션 다이렉트 소싱 지원<br> JD 기반 롱리스트를 빠르게 구성해 초기 의사결정을 지원",
     meta: {
       company: "Smilegate Holdings |<br>Talent Relations Team",
       period: "2025.12 ~ 진행중",
