@@ -106,7 +106,7 @@ const PROJECTS = {
   p2: {
     title: "자체 인텔리전스 플랫폼 데이터 고도화",
     summary:
-      "외부 채널 기반 인재 정보를 내부 인텔리전스 플랫폼(ETM) DB로 전환. 기준 수립·정제·검증으로 운영 신뢰도 확보.",
+      "외부 채널 기반 인재 정보를 내부 인텔리전스 플랫폼 DB로 전환. 기준 수립·정제·검증으로 운영 신뢰도 확보.",
     meta: {
       company: "Smilegate Holdings |<br/>Talent Relations Team",
       period: "2025.09 ~ 2025.11",
