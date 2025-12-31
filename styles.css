@@ -623,3 +623,18 @@ body{ overflow: hidden; } /* 스크롤은 snap에서만 */
   .grid2{ grid-template-columns: 1fr; }
   .chapter{ align-items: stretch; } /* 모바일에서는 상단부터 */
 }
+/* footer를 한 화면 안에서 '가운데 정렬'로 꽉 차 보이게 */
+.footer.chapter{
+  display: flex;
+  align-items: center;     /* 세로 중앙 */
+}
+
+.footer__inner{
+  min-height: 60vh;        /* 내용이 적어도 적당히 높이 확보 */
+  align-content: center;
+}
+
+/* 맨 위로 버튼을 아래쪽으로 내리고 싶으면 */
+.footer__cta{
+  margin-top: 22px;
+}
