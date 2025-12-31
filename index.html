@@ -10,9 +10,9 @@
 
 <body>
   <!-- Top Nav -->
-  <header class="topbar" id="top">
+  <header class="topbar">
     <div class="container topbar__inner">
-      <a class="brand" href="#top" aria-label="홈으로">
+      <a class="brand" href="#home" aria-label="홈으로">
         <span class="brand__dot"></span>
         <span class="brand__text">Eunjeong</span>
       </a>
@@ -25,7 +25,7 @@
         <a href="#contact">Contact</a>
       </nav>
 
-      <button class="nav__toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false">
+      <button class="nav__toggle" id="navToggle" aria-label="메뉴 열기" aria-expanded="false" type="button">
         <span></span><span></span><span></span>
       </button>
     </div>
@@ -39,24 +39,23 @@
     </div>
   </header>
 
-  <!-- ✅ 여기부터: 챕터 스크롤 컨테이너 -->
+  <!-- ✅ 챕터 스크롤 컨테이너 -->
   <main class="snap" id="snap">
 
-    <!-- Hero (표지 느낌) -->
-    <section class="hero chapter" id="top""
+    <!-- Hero -->
+    <section class="hero chapter" id="home">
       <div class="container hero__inner">
         <p class="eyebrow">Portfolio</p>
 
-<h1 class="hero__title">
-  사랑하는 일을 찾는 과정은<br />
-  <span class="accent">사람을 이해하는 일</span>에서 시작된다고 믿는,<br />
-  지원자 <span class="nowrap">강은정</span>입니다.
-</h1>
+        <h1 class="hero__title">
+          사랑하는 일을 찾는 과정은<br />
+          <span class="accent">사람을 이해하는 일</span>에서 시작된다고 믿는,<br />
+          지원자 <span class="nowrap">강은정</span>입니다.
+        </h1>
 
-<p class="hero__desc">
-  사람을 이해하는 시선으로 기획하고, 운영하며, 문제를 해결해온 과정입니다.
-</p>
-
+        <p class="hero__desc">
+          사람을 이해하는 시선으로 기획하고, 운영하며, 문제를 해결해온 과정입니다.
+        </p>
 
         <div class="hero__cta">
           <a class="btn btn--primary" href="#projects">프로젝트 보기</a>
@@ -105,8 +104,7 @@
                   <h4>학력사항</h4>
                   <ul class="bullets">
                     <li>부영여자고등학교 졸업</li>
-                    <li>경기대학교 경영학과 / AI융합경영 복수전공<br /> 
-                        재학</li>
+                    <li>경기대학교 경영학과 / AI융합경영 복수전공<br />재학</li>
                   </ul>
                 </div>
 
@@ -194,7 +192,7 @@
       </div>
     </section>
 
-    <!-- Key Projects (카드 + 클릭 상세) -->
+    <!-- Projects -->
     <section class="section chapter" id="projects">
       <div class="container">
         <div class="section__head">
@@ -203,41 +201,38 @@
         </div>
 
         <div class="projectGrid">
-          <button class="projectCard" data-project="p1">
+          <button class="projectCard" data-project="p1" type="button">
             <div class="projectCard__thumb">
               <img src="project1.png" alt="프로젝트 01 썸네일" />
               <span class="badge">01</span>
             </div>
             <div class="projectCard__body">
               <h3>전략적 다이렉트 소싱 참여</h3>
-              <p>신사업 ‘재무팀장급’ 포지션</br>  
-                    다이렉트 소싱 지원 · 롱리스트 구성</p>
+              <p>신사업 ‘재무팀장급’ 포지션<br/>다이렉트 소싱 지원 · 롱리스트 구성</p>
               <span class="link">상세 보기 →</span>
             </div>
           </button>
 
-          <button class="projectCard" data-project="p2">
+          <button class="projectCard" data-project="p2" type="button">
             <div class="projectCard__thumb">
               <img src="project2.png" alt="프로젝트 02 썸네일" />
               <span class="badge">02</span>
             </div>
             <div class="projectCard__body">
               <h3>자체 인텔리전스 플랫폼 데이터 고도화</h3>
-              <p>외부 인재 정보를 내부 ETM DB로 </br>
-                    전환 · 분류 기준 수립/정제</p>
+              <p>외부 인재 정보를 내부 ETM DB로<br/>전환 · 분류 기준 수립/정제</p>
               <span class="link">상세 보기 →</span>
             </div>
           </button>
 
-          <button class="projectCard" data-project="p3">
+          <button class="projectCard" data-project="p3" type="button">
             <div class="projectCard__thumb">
               <img src="project3.jpg" alt="프로젝트 03 썸네일" />
               <span class="badge">03</span>
             </div>
             <div class="projectCard__body">
               <h3>친환경 창업 프로젝트 ‘Pill Good’</h3>
-              <p>문제 인식–자원 확보–제작–검증–개선까지 </br>
-                    연결된 실행형 프로젝트</p>
+              <p>문제 인식–자원 확보–제작–검증–개선까지<br/>연결된 실행형 프로젝트</p>
               <span class="link">상세 보기 →</span>
             </div>
           </button>
@@ -245,91 +240,84 @@
       </div>
     </section>
 
-<!-- Vision -->
-<section class="section section--muted chapter" id="vision">
-  <div class="container">
-    <div class="section__head visionHead">
-      <h2 class="visionTitle">Vision & Goals</h2>
-      <div class="visionUnderline" aria-hidden="true"></div>
-      <p class="visionSub">Three Colors, One Ecosystem</p>
-    </div>
-
-    <!-- 3 circles -->
-    <div class="visionDiagram" role="group" aria-label="Vision three circles">
-      <div class="visionCircle visionCircle--green">
-        <div class="visionCircle__inner">
-          <p class="visionCircle__kr">플랫폼의 맥락을 읽는</p>
-          <p class="visionCircle__en">Analytical Partner</p>
+    <!-- Vision (3 circles) -->
+    <section class="section section--muted chapter" id="vision">
+      <div class="container">
+        <div class="section__head visionHead">
+          <h2 class="visionTitle">Vision & Goals</h2>
+          <div class="visionUnderline" aria-hidden="true"></div>
+          <p class="visionSub">Three Colors, One Ecosystem</p>
         </div>
-      </div>
 
-      <div class="visionConnector" aria-hidden="true"></div>
+        <div class="visionDiagram" role="group" aria-label="Vision three circles">
+          <div class="visionCircle visionCircle--green">
+            <div class="visionCircle__inner">
+              <p class="visionCircle__kr">플랫폼의 맥락을 읽는</p>
+              <p class="visionCircle__en">Analytical Partner</p>
+            </div>
+          </div>
 
-      <div class="visionCircle visionCircle--yellow">
-        <div class="visionCircle__inner">
-          <p class="visionCircle__kr">원천 IP의 힘을 잇는</p>
-          <p class="visionCircle__en">Global Connector</p>
+          <div class="visionConnector" aria-hidden="true"></div>
+
+          <div class="visionCircle visionCircle--yellow">
+            <div class="visionCircle__inner">
+              <p class="visionCircle__kr">원천 IP의 힘을 잇는</p>
+              <p class="visionCircle__en">Global Connector</p>
+            </div>
+          </div>
+
+          <div class="visionConnector" aria-hidden="true"></div>
+
+          <div class="visionCircle visionCircle--red">
+            <div class="visionCircle__inner">
+              <p class="visionCircle__kr">확장과 변주를 돕는</p>
+              <p class="visionCircle__en">Creative Supporter</p>
+            </div>
+          </div>
         </div>
+
+        <p class="visionStatement">
+          뮤직·스토리·미디어의 경계가 허물어지는 카카오엔터테인먼트의 거대한 밸류체인 속에서<br />
+          각 도메인의 특성에 맞는 인재를 적재적소에 연결하여 IP 통합 생태계의 시너지를 극대화하는 All-Round 영입 전문가가 되겠습니다.
+        </p>
       </div>
-
-      <div class="visionConnector" aria-hidden="true"></div>
-
-      <div class="visionCircle visionCircle--red">
-        <div class="visionCircle__inner">
-          <p class="visionCircle__kr">확장과 변주를 돕는</p>
-          <p class="visionCircle__en">Creative Supporter</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- bottom statement -->
-    <p class="visionStatement">
-      뮤직·스토리·미디어의 경계가 허물어지는 카카오엔터테인먼트의 거대한 밸류체인 속에서<br />
-      각 도메인의 특성에 맞는 인재를 적재적소에 연결하여 IP 통합 생태계의 시너지를 극대화하는 All-Round 영입 전문가가 되겠습니다.
-    </p>
-  </div>
-</section>
-
+    </section>
 
     <!-- Contact / Closing -->
     <footer class="footer chapter" id="contact">
-  <!-- ✅ 배경 비디오 -->
-  <video class="footer__bg" autoplay muted loop playsinline preload="metadata">
-    <source src="bg.mp4" type="video/mp4" />
-  </video>
+      <!-- 배경 비디오 -->
+      <video class="footer__bg" autoplay muted loop playsinline preload="metadata">
+        <source src="bg.mp4" type="video/mp4" />
+      </video>
 
-  <!-- ✅ 위에 올라갈 컨텐츠 -->
-  <div class="container footer__inner">
-    <div>
-      <h2 class="footer__title">∞</h2>
-      <p class="footer__desc">사람을 깊이 이해하는 힘으로, Contents의 내일을 Connect할 강은정입니다.</p>
-    </div>
+      <div class="container footer__inner">
+        <div>
+          <h2 class="footer__title">∞</h2>
+          <p class="footer__desc">사람을 깊이 이해하는 힘으로, Contents의 내일을 Connect할 강은정입니다.</p>
+        </div>
 
-    <div class="footer__meta">
-      <span>© <span id="year"></span> Kang Eunjeong</span>
-      <span class="dot">•</span>
-      <a href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a>
-      <span class="dot">•</span>
-      <span>010-2191-3831</span>
-    </div>
+        <div class="footer__meta">
+          <span>© <span id="year"></span> Kang Eunjeong</span>
+          <span class="dot">•</span>
+          <a href="mailto:ejkang0412@naver.com">ejkang0412@naver.com</a>
+          <span class="dot">•</span>
+          <span>010-2191-3831</span>
+        </div>
 
-      <div class="footer__cta">
-      <a class="btn btn--ghost" href="#top">맨 위로</a>
-    </div>
-    
-  </div>
-</footer>
-
-
+        <!-- ✅ “연락처 다음 줄”에 맨위로 -->
+        <div class="footer__cta">
+          <a class="btn btn--ghost" href="#home">맨 위로</a>
+        </div>
+      </div>
+    </footer>
   </main>
-  <!-- ✅ 여기까지: 챕터 스크롤 컨테이너 -->
 
-  <!-- Project Modal (main 바깥에 두는 게 안전) -->
+  <!-- Project Modal (main 바깥) -->
   <div class="modal" id="modal" aria-hidden="true">
     <div class="modal__backdrop" data-close="true"></div>
 
     <div class="modal__dialog" role="dialog" aria-modal="true" aria-label="프로젝트 상세">
-      <button class="modal__close" id="modalClose" aria-label="닫기">×</button>
+      <button class="modal__close" id="modalClose" aria-label="닫기" type="button">×</button>
       <div class="modal__content" id="modalContent"></div>
     </div>
   </div>
