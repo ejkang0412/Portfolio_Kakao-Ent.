@@ -23,9 +23,8 @@ button { font: inherit; }
   --radius: 18px;
   --radius2: 22px;
 
-  /* ✅ 챕터 스냅용 */
-  --topbar-h: 56px; /* 필요하면 60/64로 미세조정 */
-  --chapter-h: calc(100vh - var(--topbar-h));
+  /* JS에서 실제 topbar 높이로 자동 업데이트 */
+  --topbar-h: 64px;
 }
 
 .container{
@@ -36,13 +35,40 @@ button { font: inherit; }
 .section{ padding: 86px 0; }
 .section--muted{ background: #0f0f0f; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 
-.section__head{ margin-bottom: 28px; }
+.section__head{
+  margin-bottom: 28px;
+}
 .section__head h2{
   margin: 0 0 10px;
   font-size: 34px;
   letter-spacing: -0.02em;
 }
-.section__head p{ margin: 0; color: var(--muted); }
+.section__head p{
+  margin: 0;
+  color: var(--muted);
+}
+
+/* =========================
+   SNAP (챕터 한 화면씩)
+========================= */
+body{ overflow: hidden; } /* 스크롤은 snap에서만 */
+.snap{
+  height: calc(100vh - var(--topbar-h));
+  overflow-y: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.chapter{
+  min-height: calc(100vh - var(--topbar-h));
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+}
+.section.chapter,
+.footer.chapter{
+  align-items: stretch; /* 섹션은 위에서 시작하는 느낌 */
+}
 
 /* ====== Topbar ====== */
 .topbar{
@@ -107,51 +133,51 @@ button { font: inherit; }
 }
 .nav__mobile a:hover{ color: var(--text); }
 
-
-/* =================================================
-   ✅ FULLPAGE CHAPTER SNAP (PC용)
-   - 스크롤은 main.snap에서만
-   - 한 챕터 = 한 화면(상단바 제외)
-================================================= */
-html, body { height: 100%; }
-body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 */
-
-.snap{
-  height: var(--chapter-h);
-  overflow-y: auto;
-  overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+/* ====== Buttons / chips ====== */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.06);
+  color: var(--text);
+  font-weight: 800;
+  cursor: pointer;
 }
-
-.chapter{
-  min-height: var(--chapter-h);
-  scroll-snap-align: start;
-  scroll-snap-stop: always;
-
-  display: flex;
-  align-items: center;
+.btn--primary{
+  border-color: rgba(255,215,0,.45);
+  background: rgba(255,215,0,.10);
+  color: #fff;
 }
-
-.chapter.section{ padding: 0 !important; }
-.chapter.footer{ padding: 0 !important; }
-
-/* 각 챕터 내부 여백은 container로 */
-.chapter .container{ padding: 56px 0 44px; }
-
-/* muted 섹션 경계선 약하게 */
-.section--muted{
-  border-top: 1px solid rgba(255,255,255,.04);
-  border-bottom: 1px solid rgba(255,255,255,.04);
+.btn--ghost{
+  background: rgba(255,255,255,.04);
 }
-
+.meta__chip{
+  display:inline-flex;
+  align-items:center;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,.12);
+  background: rgba(255,255,255,.04);
+  color: #eaeaea;
+  font-weight: 700;
+  font-size: 13px;
+}
 
 /* ====== Hero ====== */
 .hero{
   position: relative;
   overflow: hidden;
+  padding: 0;
 }
-.hero__inner{ position: relative; z-index: 1; }
+.hero__inner{
+  position: relative;
+  z-index: 1;
+  padding: 56px 0 44px;
+}
 .hero__bg{
   position: absolute;
   inset: 0;
@@ -175,6 +201,7 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
   text-transform: uppercase;
   margin: 0 0 14px;
 }
+
 .hero__title{
   margin: 0 0 16px;
   font-size: clamp(26px, 3.1vw, 44px);
@@ -191,45 +218,12 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
   max-width: 720px;
 }
 .hero__cta{ display:flex; gap: 12px; flex-wrap: wrap; }
-
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 12px 16px;
-  border-radius: 14px;
-  font-weight: 800;
-  border: 1px solid rgba(255,255,255,.12);
-  cursor: pointer;
-}
-.btn--primary{
-  background: var(--accent);
-  color: #121212;
-  border-color: rgba(255,215,0,.55);
-}
-.btn--primary:hover{ filter: brightness(1.03); }
-.btn--ghost{
-  background: rgba(255,255,255,.04);
-  color: var(--text);
-}
-.btn--ghost:hover{ background: rgba(255,255,255,.08); }
-
 .hero__meta{
   margin-top: 14px;
   display:flex;
   gap: 10px;
   flex-wrap: wrap;
 }
-.meta__chip{
-  font-size: 13px;
-  color: var(--muted);
-  padding: 8px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(255,255,255,.12);
-  background: rgba(255,255,255,.03);
-}
-
 
 /* ====== About ====== */
 .about__card{
@@ -292,12 +286,12 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
 }
 .bullets{ margin: 0; padding-left: 18px; color: var(--muted); }
 .bullets li{ margin: 6px 0; }
+
 .about__desc{
   margin: 10px 0 0;
   color: #d9d9d9;
   line-height: 1.75;
 }
-
 
 /* ====== Skills ====== */
 .skills{
@@ -337,7 +331,6 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
 }
 .pct{ color: var(--muted); text-align:right; }
 
-
 /* ====== Projects ====== */
 .projectGrid{
   display:grid;
@@ -354,6 +347,7 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
   cursor: pointer;
   box-shadow: var(--shadow);
   transition: transform .18s ease, background .18s ease, border-color .18s ease;
+  color: var(--text);
 }
 .projectCard:hover{
   transform: translateY(-4px);
@@ -382,56 +376,91 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
   padding: 6px 10px;
   border-radius: 999px;
 }
-.projectCard__body{ padding: 14px 14px 16px; }
-.projectCard__body h3{ margin: 0 0 8px; font-size: 17px; letter-spacing: -0.01em;}
-.projectCard__body p{ margin: 0 0 12px; color: var(--muted); line-height: 1.65; }
+.projectCard__body{ padding: 14px 14px 16px; color: var(--text); }
+.projectCard__body h3{ margin: 0 0 8px; font-size: 17px; letter-spacing: -0.01em; color: #fff; }
+.projectCard__body p{ margin: 0 0 12px; color: #eaeaea; line-height: 1.65; }
 .link{ color: var(--accent); font-weight: 800; }
 
+/* ====== Vision (3 circles) ====== */
+.visionHead{ text-align: center; }
+.visionTitle{ margin: 0 0 10px; }
+.visionUnderline{
+  width: 88px;
+  height: 2px;
+  margin: 0 auto 12px;
+  background: rgba(255,255,255,.22);
+}
+.visionSub{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 700;
+}
 
-/* ====== Vision ====== */
-.vision{ display:grid; gap: 14px; }
-.vision__card{
-  background: var(--panel);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: var(--radius2);
-  padding: 18px;
+.visionDiagram{
+  margin-top: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.visionCircle{
+  width: 240px;
+  height: 240px;
+  border-radius: 999px;
+  background: transparent;
+  display: grid;
+  place-items: center;
   box-shadow: var(--shadow);
+  border: 3px solid rgba(255,255,255,.20);
 }
-.vision__card h3{ margin: 0 0 10px; }
-.vision__card p{ margin: 0; color: #d9d9d9; line-height: 1.75; }
+.visionCircle__inner{
+  text-align: center;
+  padding: 18px;
+}
+.visionCircle__kr{
+  margin: 0 0 8px;
+  color: #eaeaea;
+  font-weight: 800;
+}
+.visionCircle__en{
+  margin: 0;
+  color: var(--muted);
+  font-weight: 900;
+  font-size: 18px;
+}
 
-.vision__grid{
-  display:grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-}
-.pill{
-  background: rgba(255,255,255,.03);
-  border: 1px solid rgba(255,255,255,.10);
-  border-radius: var(--radius2);
-  padding: 16px;
-}
-.pill h4{ margin: 0 0 8px; color: var(--muted); font-weight: 900; }
-.pill p{ margin: 0; font-size: 18px; font-weight: 900; color: var(--accent); }
+.visionCircle--green{ border-color: rgba(60, 220, 140, .95); }
+.visionCircle--yellow{ border-color: rgba(255, 215, 0, .95); }
+.visionCircle--red{ border-color: rgba(255, 80, 80, .95); }
 
-.quote{
-  background: linear-gradient(180deg, rgba(255,215,0,.10), rgba(255,255,255,.02));
-  border: 1px solid rgba(255,215,0,.18);
-  border-radius: var(--radius2);
-  padding: 16px 18px;
+.visionConnector{
+  width: 54px;
+  height: 2px;
+  background: rgba(255,255,255,.20);
+  border-radius: 999px;
 }
-.quote p{ margin:0; color:#f0f0f0; line-height: 1.75; }
 
+.visionStatement{
+  margin: 26px auto 0;
+  max-width: 980px;
+  text-align: center;
+  line-height: 1.8;
+  color: #e6e6e6;
+}
 
 /* ====== Footer ====== */
 .footer{
+  padding: 56px 0 40px;
   border-top: 1px solid rgba(255,255,255,.06);
   background: #0d0d0d;
+  position: relative;
+  overflow: hidden;
 }
-.footer__inner{ display:grid; gap: 18px; }
-.footer__title{ margin: 0; font-size: 28px; }
+.footer__inner{ display:grid; gap: 18px; position: relative; z-index: 1; }
+.footer__title{ margin: 0; font-size: 34px; }
 .footer__desc{ margin: 8px 0 0; color: var(--muted); max-width: 760px; line-height: 1.7; }
-.footer__cta{ display:flex; gap: 10px; flex-wrap: wrap; }
 .footer__meta{
   display:flex;
   gap: 10px;
@@ -441,6 +470,23 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
 }
 .dot{ opacity: .6; }
 
+/* ✅ meta 다음 줄에 맨위로 버튼 */
+.footer__cta{
+  margin-top: 14px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.footer__bg{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .22;
+  pointer-events: none;
+  z-index: 0;
+}
 
 /* ====== Modal ====== */
 .modal{
@@ -535,212 +581,45 @@ body { overflow: hidden; } /* ✅ body 스크롤 막고 snap에서만 스크롤 
   line-height: 1.75;
 }
 
+/* =================================================
+   Scroll Reveal
+================================================= */
+.reveal{
+  opacity: 0;
+  transform: translateY(18px);
+  filter: blur(2px);
+  transition:
+    opacity 700ms ease,
+    transform 700ms cubic-bezier(.2,.8,.2,1),
+    filter 700ms ease;
+  will-change: opacity, transform, filter;
+}
+.reveal.is-visible{
+  opacity: 1;
+  transform: translateY(0);
+  filter: blur(0);
+}
+@media (prefers-reduced-motion: reduce){
+  .reveal, .reveal.is-visible{
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+    filter: none !important;
+  }
+}
 
 /* ====== Responsive ====== */
 @media (max-width: 980px){
-  /* 모바일에서는 기존처럼 자연 스크롤이 더 나음 */
-  body{ overflow: auto; }
-  .snap{ height: auto; overflow: visible; scroll-snap-type: none; }
-  .chapter{ min-height: auto; display: block; }
-  .chapter.section{ padding: 86px 0 !important; }
-  .chapter.footer{ padding: 56px 0 40px !important; }
-  .chapter .container{ padding: 0; }
-
   .projectGrid{ grid-template-columns: 1fr; }
   .about__card{ grid-template-columns: 1fr; }
   .detail__head, .detail__body{ grid-template-columns: 1fr; }
   .skills{ grid-template-columns: 1fr; }
+  .visionConnector{ display:none; }
 }
 
 @media (max-width: 860px){
   .nav{ display:none; }
   .nav__toggle{ display:block; }
   .grid2{ grid-template-columns: 1fr; }
-}
-
-/* ===== FHD Desktop tuning (1920x1080) ===== */
-@media (min-width: 1200px){
-  .hero__title{
-    font-size: 42px;
-    line-height: 1.15;
-    max-width: 900px;
-  }
-}
-/* Custom Cursor */
-body{
-  cursor: url("후로도 버젼3.cur") 16 16, auto;
-}
-/* =========================
-   Vision (3 circles layout)
-   ========================= */
-
-.visionHead{
-  text-align: center;
-  margin-bottom: 34px;
-}
-
-.visionTitle{
-  margin: 0;
-  font-size: clamp(40px, 5.2vw, 72px);
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  color: var(--accent);
-}
-
-.visionUnderline{
-  width: 56px;
-  height: 3px;
-  background: var(--accent);
-  margin: 14px auto 18px;
-  border-radius: 999px;
-  opacity: .9;
-}
-
-.visionSub{
-  margin: 0;
-  color: #d7d7d7;
-  font-weight: 700;
-}
-
-.visionDiagram{
-  display: grid;
-  grid-template-columns: 1fr auto 1fr auto 1fr;
-  align-items: center;
-  gap: 22px;
-  margin: 34px auto 22px;
-  max-width: 980px;
-}
-
-.visionCircle{
-  width: min(260px, 28vw);
-  aspect-ratio: 1/1;
-  border-radius: 999px;
-  background: transparent;
-  display: grid;
-  place-items: center;
-  text-align: center;
-}
-
-.visionCircle__inner{
-  padding: 22px;
-}
-
-.visionCircle__kr{
-  margin: 0 0 8px;
-  font-weight: 800;
-  font-size: 15px;
-}
-
-.visionCircle__en{
-  margin: 0;
-  font-weight: 900;
-  font-size: 16px;
-}
-
-/* outline colors */
-.visionCircle--green{
-  border: 2px solid rgba(55, 235, 120, .65);
-}
-.visionCircle--green .visionCircle__kr,
-.visionCircle--green .visionCircle__en{
-  color: rgba(55, 235, 120, .95);
-}
-
-.visionCircle--yellow{
-  border: 2px solid rgba(255, 215, 0, .75);
-}
-.visionCircle--yellow .visionCircle__kr,
-.visionCircle--yellow .visionCircle__en{
-  color: rgba(255, 215, 0, .98);
-}
-
-.visionCircle--red{
-  border: 2px solid rgba(255, 80, 80, .70);
-}
-.visionCircle--red .visionCircle__kr,
-.visionCircle--red .visionCircle__en{
-  color: rgba(255, 80, 80, .95);
-}
-
-/* dotted connectors */
-.visionConnector{
-  width: 70px;
-  height: 2px;
-  background-image: radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.6px);
-  background-size: 8px 2px;
-  background-repeat: repeat-x;
-  opacity: .8;
-}
-
-/* bottom statement */
-.visionStatement{
-  margin: 22px auto 0;
-  max-width: 980px;
-  text-align: center;
-  color: #d9d9d9;
-  line-height: 1.85;
-  font-size: 14px;
-}
-
-/* responsive: stack vertically */
-@media (max-width: 900px){
-  .visionDiagram{
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
-  .visionConnector{
-    width: 2px;
-    height: 26px;
-    background-image: radial-gradient(rgba(255,255,255,.55) 1px, transparent 1.6px);
-    background-size: 2px 8px;
-    background-repeat: repeat-y;
-    margin: 0 auto;
-  }
-  .visionCircle{
-    width: min(320px, 80vw);
-  }
-}
-/* Key Projects 카드 제목/설명 글씨 색상 수정 */
-.projectCard__body h3 {
-  color: #ffffff;
-}
-
-.projectCard__body p {
-  color: #ffffff;
-}
-/* 프로젝트 카드 썸네일 아래 텍스트 흰색 처리 */
-.projectCard__body h3,
-.projectCard__body p {
-  color: #ffffff !important;
-}
-/* ===== Footer Background Video ===== */
-.footer{
-  position: relative;
-  overflow: hidden;
-}
-
-.footer__bg{
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.28;          /* 영상 진하면 0.18~0.35로 조절 */
-  filter: blur(0px);      /* 필요하면 blur(1px) 정도 */
-}
-
-/* 영상 위에 어두운 오버레이(가독성 확보) */
-.footer::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background: rgba(0,0,0,0.55); /* 더 어둡게: 0.6~0.7 */
-  z-index: 1;
-}
-
-/* footer 내용이 영상 위로 올라오게 */
-.footer__inner{
-  position: relative;
-  z-index: 2;
+  .chapter{ align-items: stretch; } /* 모바일에서는 상단부터 */
 }
