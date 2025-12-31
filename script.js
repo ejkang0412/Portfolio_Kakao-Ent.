@@ -84,7 +84,7 @@ const PROJECTS = {
   p1: {
     title: "전략적 다이렉트 소싱 참여",
     summary:
-      "신사업 ‘재무팀장급’ 포지션 다이렉트 소싱 지원", 
+      "신사업 ‘재무팀장급’ 포지션 다이렉트 소싱 지원<br/>", 
     "JD 기반 롱리스트를 빠르게 구성해 초기 의사결정을 지원",
     meta: {
       company: "Smilegate Holdings |<br/>Talent Relations Team",
@@ -107,7 +107,8 @@ const PROJECTS = {
   p2: {
     title: "자체 인텔리전스 플랫폼 데이터 고도화",
     summary:
-      "외부 채널 기반 인재 정보를 내부 인텔리전스 플랫폼 DB로 전환. 기준 수립·정제·검증으로 운영 신뢰도 확보",
+      "외부 채널 기반 인재 정보를 내부 인텔리전스 플랫폼 DB로 전환<br/>",
+    "기준 수립·정제·검증으로 운영 신뢰도 확보",
     meta: {
       company: "Smilegate Holdings |<br/>Talent Relations Team",
       period: "2025.09 ~ 2025.11",
@@ -128,7 +129,7 @@ const PROJECTS = {
   p3: {
     title: "친환경 창업 프로젝트 ‘Pill Good’",
     summary:
-      "침입식물 ‘환삼덩굴’ 문제를 자원 전환으로 재정의",
+      "침입식물 ‘환삼덩굴’ 문제를 자원 전환으로 재정의<br/>",
     " 제작비 확보 → OEM/연구원 협업 → 시제품 검증 → 팝업 테스트 → 개선까지 실행.",
     meta: {
       company: "Pill Good",
