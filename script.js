@@ -87,7 +87,7 @@ const PROJECTS = {
     summary:
       "신사업 ‘재무팀장급’ 포지션 다이렉트 소싱 지원. JD 기반 롱리스트를 빠르게 구성해 초기 의사결정을 지원.",
     meta: {
-      company: "Smilegate Holdings | </br>
+      company: "Smilegate Holdings | <br/>
                       Talent Relations Team",
       period: "2025.12 ~ 진행중",
       role: "다이렉트 소싱 실무 지원",
@@ -95,10 +95,10 @@ const PROJECTS = {
     },
     bullets: [
       "LinkedIn, Remember 등 외부 채널 기반 후보자 발굴 (X-ray 서치 포함)",
-      "JD 기준으로 경력·산업·직급 적합도 분석 후</br>
+      "JD 기준으로 경력·산업·직급 적합도 분석 후<br/>
        롱리스트 작성",
       "트랙레코드·조직 적합성 중심 정성 코멘트 정리",
-      "단순 이력 나열이 아닌, 채용 의사결정 참고용 </br>
+      "단순 이력 나열이 아닌, 채용 의사결정 참고용 <br/>
        인재 자료 제공"
     ],
     contributions: [
@@ -113,7 +113,7 @@ const PROJECTS = {
     summary:
       "외부 채널 기반 인재 정보를 내부 인텔리전스 플랫폼(ETM) DB로 전환. 기준 수립·정제·검증으로 운영 신뢰도 확보.",
     meta: {
-      company: "Smilegate Holdings | </br>
+      company: "Smilegate Holdings | <br/>
                       Talent Relations Team",
       period: "2025.09 ~ 2025.11",
       role: "인재 데이터 구축 및 분류 지원",
@@ -121,12 +121,12 @@ const PROJECTS = {
     },
     bullets: [
       "오픈 웹 기반 인재 정보를 내부 기준(업무 영역·직급·숙련도)으로 1차 스크리닝/라벨링",
-      "PO와 협업해 데이터 정제·분류 기준 수립 및 </br>
+      "PO와 협업해 데이터 정제·분류 기준 수립 및 <br/>
        DB 구축 전 과정 참여",
       "게임 프로젝트 DB 증강 및 정밀화(2차 정확성 검토)"
     ],
     contributions: [
-      "데이터 정확성 관점에서 분류 기준을 맞추고</br> 
+      "데이터 정확성 관점에서 분류 기준을 맞추고<br/>
        검증 루프에 기여",
       "리드타임 단축(예: 3개월 → 1.5개월)"
     ]
@@ -145,7 +145,7 @@ const PROJECTS = {
     bullets: [
       "학교 창업경진대회·공모전 참여로 제작비 확보",
       "OEM 업체 및 원료 연구원과 협업해 제형·성분·제조 공정 검증",
-      "BMW YIDP 기반 팝업에서 실사용자 테스트</br>
+      "BMW YIDP 기반 팝업에서 실사용자 테스트<br/>
        및 피드백 수집",
       "사용성·패키징·메시지 전달 방식 개선 인사이트 도출"
     ],
